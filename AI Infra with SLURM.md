@@ -1,7 +1,7 @@
 SLURM is one of the most popular and widely used open-source workload managers for AI, HPC, and cloud computing. With Slurm, you can run large-scale parallel and distributed applications across a set of compute nodes. It provides features such as job scheduling, resource management, fault tolerance, and power management. Many of the world's top supercomputers, research institutes, universities, and enterprises use Slurm.
 However, setting up and managing Slurm clusters on the cloud can be challenging and time-consuming, especially if you're not familiar with the cloud environment or the Slurm configuration. You need to handle tasks such as provisioning and scaling compute nodes, installing and updating Slurm software, configuring network and storage, monitoring cluster health and performance, and troubleshooting issues. These tasks can distract you from your core research or business objectives and reduce the productivity and efficiency of your AI and HPC workloads.
 
-** 1.1 The Spoke: Application Landing Zone -- AI Infra ** \
+**1.1 The Spoke: Application Landing Zone -- AI Infra** \
 
 ![alt text](https://github.com/mandargujrathi/ai-infra-with-cyclecloud/blob/main/AIInfra-LZ.jpg)
  
@@ -20,7 +20,7 @@ Azure CycleCloud Workspace for Slurm will be used in the AI Infra Landing Zone. 
 To learn more about this accelerator solution, see Azure CycleCloud Workspace for Slurm. \\
 
 
-** 1.2 Plan CycleCloud Workspace for Slurm (CCWS) deployment** \\
+**1.2 Plan CycleCloud Workspace for Slurm (CCWS) deployment** \\
 You have two deployment plans for Azure CycleCloud Workspace for SLURM: \
 •	Greenfield environment: The deployment provisions all the needed resources.\
 •	Brownfield deployment: You provide the existing resources.\
@@ -32,7 +32,7 @@ When you deploy, grant the Azure user account the following roles:\
 Note:\
 We recommend that you predeploy a Hub virtual network to connect to your enterprise network if you don't already have one. This hub can accommodate a VPN Gateway and an Azure Bastion. The CycleCloud Workspace for Slurm environment is a spoke that's peered during deployment. Contact Azure HPC Support if VPN or Azure Bastion don't meet your requirements or if your organization blocks them.
 
-*Plan 1: Greenfield deployment* \
+***Plan 1: Greenfield deployment*** \
 A greenfield deployment creates the following resources and role assignments:\
 •	A resource group.\
 •	The virtual network and its ccw-cyclecloud-subnet and ccw-compute-subnet subnets.\
@@ -48,7 +48,7 @@ A greenfield deployment creates the following resources and role assignments:\
 •	Optionally, a virtual network Peering.\
 •	Optionally, a Private Endpoint to an existing Azure Database for MySQL flexible server instance.\\
 
-*Plan 2: Brownfield deployment* \
+***Plan 2: Brownfield deployment*** \
 In a brownfield deployment, you provide existing resources for:\
 •	The virtual network and subnets in which you deploy the environment.\
 •	Filesystem Storage for the user's home directories and other filers, such as external NFS mount points or Azure Managed Lustre Filesystem (AMLS).\
