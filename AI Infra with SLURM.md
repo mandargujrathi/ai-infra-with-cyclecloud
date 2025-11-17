@@ -68,7 +68,8 @@ If you bring your own virtual network, follow these prerequisites:\
 ***1.3.1 Choose an Availability Zone-enabled resource within a region:***
 Select an Azure region that supports Availability Zones to leverage this feature for your HPC deployments. 
 In AI Infra deployments capacity of the GPU compute may be limited to a single zone so it is best to query the available zones for compute in the actual subscription of deployment and seek the quota approvals. 
- 
+
+ ![alt text](https://github.com/mandargujrathi/ai-infra-with-cyclecloud/blob/main/gpuzones.jpg)
 
 Once the GPU compute zone is decided, plan the same zone for storage. 
 
@@ -77,6 +78,5 @@ For services like Virtual Machine Scale Sets or other applications, configure th
 
 ***1.3.3 Replicate Applications and Data:***
 Should the GPU compute be available for multiple zones in the same region, plan for multi-zone deployments for resiliency. In the event of compute capacity limitation to a single zone, resiliency can be planned to be multi-region.
-Once multi-zone/multi-region resiliency is decided, implement data replication 
-Implement data replication or use zone-redundant services to ensure your critical AI Infra applications and data are available in multiple zones. By using Azure Availability Zones, you can build highly resilient and available AI Infra solutions that protect your data and ensure continuous operation even in the face of datacenter outages. 
+Once multi-zone/multi-region resiliency is decided, implement data replication. By using Azure Availability Zones, you can build highly resilient and available AI Infra solutions that protect your data and ensure continuous operation even in the face of datacenter outages. 
 
