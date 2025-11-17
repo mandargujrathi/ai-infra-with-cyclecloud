@@ -62,3 +62,21 @@ If you bring your own virtual network, follow these prerequisites:\
 •	When using Azure Managed Lustre Filesystem, use a dedicated lustre subnet with a CIDR based on the storage capacity to provision as documented in Azure Managed Lustre.\
 •	If deploying a Bastion, use a dedicated BastionSubnet as documented here.\
 •	Your NSGs should allow communications between subnets as defined in the bicep/network-new.bicep file.
+
+**1.3 Improved Latency and Performance with Availability Zones  - Zonal Deployment**
+
+***1.3.1 Choose an Availability Zone-enabled resource within a region:***
+Select an Azure region that supports Availability Zones to leverage this feature for your HPC deployments. 
+In AI Infra deployments capacity of the GPU compute may be limited to a single zone so it is best to query the available zones for compute in the actual subscription of deployment and seek the quota approvals. 
+ 
+
+Once the GPU compute zone is decided, plan the same zone for storage. 
+
+***1.3.2 Design for Zonal Redundancy:***
+For services like Virtual Machine Scale Sets or other applications, configure them to run on single Availability Zones. 
+
+***1.3.3 Replicate Applications and Data:***
+Should the GPU compute be available for multiple zones in the same region, plan for multi-zone deployments for resiliency. In the event of compute capacity limitation to a single zone, resiliency can be planned to be multi-region.
+Once multi-zone/multi-region resiliency is decided, implement data replication 
+Implement data replication or use zone-redundant services to ensure your critical AI Infra applications and data are available in multiple zones. By using Azure Availability Zones, you can build highly resilient and available AI Infra solutions that protect your data and ensure continuous operation even in the face of datacenter outages. 
+
